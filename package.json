@@ -1,0 +1,23 @@
+{
+  "name": "splitstream",
+  "version": "0.0.0",
+  "description": "Split a readable stream by newline characters",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "author": {
+    "name": "Noah Issaacson",
+    "email": "noah+npmjs@nisaacson.com",
+    "url": "https://github.com/nisaacson"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.16.2",
+    "sinon": "~1.7.3"
+  }
+}
