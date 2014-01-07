@@ -2,14 +2,14 @@ var sinon = require('sinon')
 var fs = require('fs')
 var path = require('path')
 var expect = require('chai').expect
-var Splitstream = require('../')
+var Linestream = require('../')
 
 describe('Split test', function() {
   describe('given text with line breaks', function() {
     it('should split on new lines', function(done) {
       var fixturePath = path.join(__dirname, 'data/newlines-big.txt')
       var inputStream = fs.createReadStream(fixturePath)
-      var splitter = new Splitstream()
+      var splitter = new Linestream()
       expect(splitter).to.exist
       var output = inputStream.pipe(splitter)
       var validateLineSpy = sinon.spy(validateLine)

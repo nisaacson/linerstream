@@ -1,5 +1,5 @@
 {
-  "name": "splitstream",
+  "name": "linestream",
   "version": "0.0.0",
   "description": "Split a readable stream by newline characters",
   "main": "index.js",

@@ -1,22 +1,22 @@
-# Splitstream
+# linestream
 
 Split a readable stream by newline characters
 
-[![NPM](https://nodei.co/npm/splitstream.png)](https://nodei.co/npm/splitstream/)
+[![NPM](https://nodei.co/npm/linestream.png)](https://nodei.co/npm/linestream/)
 
 # Installation
 ```bash
-npm install -S splitstream
+npm install -S linestream
 ```
 
 # Usage
 
-Create an instance of splitstream and pipe a readable stream into that instance
+Create an instance of linestream and pipe a readable stream into that instance
 
 ```javascript
-var Splitstream = require('splitstream')
+var linestream = require('linestream')
 // splitter is an instance of require('stream').Transform
-var splitter = new Splitstream()
+var splitter = new linestream()
 
 var readStream = fs.createReadStream('/file/with/line/breaks.txt')
 var lineByLineStream = readStream.pipe(splitter)
