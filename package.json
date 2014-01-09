@@ -1,6 +1,6 @@
 {
   "name": "linerstream",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "description": "Split a readable stream by newline characters",
   "main": "index.js",
   "directories": {
