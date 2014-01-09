@@ -1,15 +1,14 @@
 var Transform = require('stream').Transform
 var util = require('util')
 
-function Liner() {
-  var opts = {
-    objectMode: true
-  }
+function Liner(opts) {
+  opts = opts || {}
+  opts.objectMode = true
   Transform.call(this, opts)
 }
 
 util.inherits(Liner, Transform)
-Liner.prototype._transform = function(chunk, encoding, done) {
+Liner.prototype._transform = function transform(chunk, encoding, done) {
   var data = chunk.toString()
   if (this._lastLineData) {
     data = this._lastLineData + data
@@ -21,7 +20,7 @@ Liner.prototype._transform = function(chunk, encoding, done) {
   done()
 }
 
-Liner.prototype_flush = function(done) {
+Liner.prototype_flush = function flush(done) {
   if (this._lastLineData) {
     this.push(this._lastLineData)
   }

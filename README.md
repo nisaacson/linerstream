@@ -20,7 +20,10 @@ Create an instance of linestream and pipe a readable stream into that instance
 ```javascript
 var Linerstream = require('linerstream')
 // splitter is an instance of require('stream').Transform
-var splitter = new Linestream()
+var opts = {
+  highWaterMark: 2
+}
+var splitter = new Linestream(opts) // opts is optional
 
 var readStream = fs.createReadStream('/file/with/line/breaks.txt')
 var lineByLineStream = readStream.pipe(splitter)
