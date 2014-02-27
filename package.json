@@ -17,8 +17,6 @@
     "sinon": "~1.7.3"
   },
   "dependencies": {
-    "chai": "~1.8.1",
-    "sinon": "~1.7.3"
   },
   "repository": {
     "type": "git",
