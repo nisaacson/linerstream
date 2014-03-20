@@ -23,7 +23,7 @@ var Linerstream = require('linerstream')
 var opts = {
   highWaterMark: 2
 }
-var splitter = new Linestream(opts) // opts is optional
+var splitter = new Linerstream(opts) // opts is optional
 
 var readStream = fs.createReadStream('/file/with/line/breaks.txt')
 var lineByLineStream = readStream.pipe(splitter)
