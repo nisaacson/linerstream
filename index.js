@@ -20,7 +20,7 @@ Liner.prototype._transform = function transform(chunk, encoding, done) {
   done()
 }
 
-Liner.prototype_flush = function flush(done) {
+Liner.prototype._flush = function flush(done) {
   if (this._lastLineData) {
     this.push(this._lastLineData)
   }
