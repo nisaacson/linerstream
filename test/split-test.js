@@ -4,9 +4,9 @@ var path = require('path')
 var expect = require('chai').expect
 var Linerstream = require('../')
 
-describe('Split test', function() {
-  describe('given text with line breaks', function() {
-    it('should split on new lines', function(done) {
+describe('Split test', function () {
+  describe('given text with line breaks', function () {
+    it('should split on new lines', function (done) {
       var fixturePath = path.join(__dirname, 'data/newlines-big.txt')
       var inputStream = fs.createReadStream(fixturePath)
       var splitter = new Linerstream()
@@ -19,9 +19,10 @@ describe('Split test', function() {
 
       function validateLine(line) {
         expect(line).to.exist
-        expect(line).to.be.a('string')
+        expect(line).to.be.an('object')
+        expect(line.toString()).to.be.a('string')
         expect(line).to.not.be.empty
-        expect(line).to.not.match(/\n/)
+        expect(line.toString()).to.not.match(/\n/)
       }
 
       function readableHandler() {

@@ -16,13 +16,17 @@ Liner.prototype._transform = function transform(chunk, encoding, done) {
   var lines = data.split('\n')
   this._lastLineData = lines.splice(lines.length - 1, 1)[0]
 
-  lines.forEach(this.push.bind(this))
+  lines.forEach(function (line) {
+    var buf = new Buffer(line)
+    this.push(buf)
+  }.bind(this))
   done()
 }
 
 Liner.prototype._flush = function flush(done) {
   if (this._lastLineData) {
-    this.push(this._lastLineData)
+    var buf = new Buffer(this._lastLineData)
+    this.push(buf)
   }
   this._lastLineData = null
   done()
