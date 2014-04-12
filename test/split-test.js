@@ -1,7 +1,7 @@
-var sinon = require('sinon')
-var fs = require('fs')
-var path = require('path')
-var expect = require('chai').expect
+var sinon       = require('sinon')
+var fs          = require('fs')
+var path        = require('path')
+var expect      = require('chai').expect
 var Linerstream = require('../')
 
 describe('Split test', function () {
@@ -19,7 +19,7 @@ describe('Split test', function () {
 
       function validateLine(line) {
         expect(line).to.exist
-        expect(line).to.be.an('object')
+        expect(Buffer.isBuffer(line)).to.be.true
         expect(line.toString()).to.be.a('string')
         expect(line).to.not.be.empty
         expect(line.toString()).to.not.match(/\n/)
