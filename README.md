@@ -2,7 +2,7 @@
 
 Split a readable stream by newline characters
 
-[![NPM](https://nodei.co/npm/linestream.png)](https://nodei.co/npm/linerstream/)
+[![NPM](https://nodei.co/npm/linerstream.png)](https://nodei.co/npm/linerstream/)
 
 [![Build Status](https://travis-ci.org/nisaacson/linerstream.png)](https://travis-ci.org/nisaacson/linerstream)
 [![Dependency Status](https://david-dm.org/nisaacson/linerstream/status.png)](https://david-dm.org/nisaacson/linerstream)
