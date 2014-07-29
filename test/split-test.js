@@ -1,6 +1,7 @@
 var sinon = require('sinon')
 var fs = require('fs')
 var path = require('path')
+var os = require('os')
 var expect = require('chai').expect
 var Linerstream = require('../')
 
@@ -21,7 +22,7 @@ describe('Split test', function() {
         expect(line).to.exist
         expect(line).to.be.a('string')
         expect(line).to.not.be.empty
-        expect(line).to.not.match(/\n/)
+        expect(line).to.not.match(/\n|\r/)
       }
 
       function readableHandler() {
