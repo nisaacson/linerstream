@@ -1,5 +1,6 @@
 var Transform = require('stream').Transform
 var util = require('util')
+var os = require('os')
 
 function Liner(opts) {
   opts = opts || {}
@@ -13,7 +14,7 @@ Liner.prototype._transform = function transform(chunk, encoding, done) {
   if (this._lastLineData) {
     data = this._lastLineData + data
   }
-  var lines = data.split('\n')
+  var lines = data.split(os.EOL)
   this._lastLineData = lines.splice(lines.length - 1, 1)[0]
 
   lines.forEach(this.push.bind(this))
