@@ -33,4 +33,12 @@ lineByLineStream.on('data', function(chunk) {
 ```
 
 
+## Override EOL
 
+If you don't want to use the OS default `EOL` character, you can ovverride it when creating the stream
+
+```
+var stream2 = new LinerStream({EOL: '\n'})
+//force windows EOL
+var stream3 = new LinerStream({EOL: '\r\n'})
+```
